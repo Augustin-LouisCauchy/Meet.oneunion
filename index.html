@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONEUNION</title>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cd-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            height: 100vh;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            -webkit-transform: translateX(100%);
+            -moz-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            -o-transform: translateX(100%);
+            transform: translateX(100%);
+            -webkit-transition: -webkit-transform 1s cubic-bezier(0.88, 0.01, 0.08, 0.99);
+            -moz-transition: -moz-transform 1s cubic-bezier(0.88, 0.01, 0.08, 0.99);
+            -o-transition: -o-transform 1s cubic-bezier(0.88, 0.01, 0.08, 0.99);
+            transition: transform 1s cubic-bezier(0.88, 0.01, 0.08, 0.99);
+        }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            /*padding: 2%;*/
+            box-shadow: 0 0 65px 2px rgba(0, 0, 0, .1);
+        }
+
+        .card img,
+        .card .img {
+            /*width: 40%;*/
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .info {
+            vertical-align: middle;
+            display: inline-block;
+            width: 59%;
+            /*padding-left: 5%;*/
+        }
+
+        .info--slide__1 {
+            margin-top: 20%;
+        }
+
+        .info h1 {
+            color: #000;
+        }
+
+        .info p {
+            /*color: #000;
+            font-size: 32px;
+            margin-top: 30px;
+            /*margin-bottom: 40px;
+            margin-left: 100px;*/
+        }
+
+        .info--slide-1__text {
+            color: #000;
+            font-size: 32px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            margin-left: 100px;
+        }
+
+        .info--slide__2 {
+            width: 100%;
+
+        }
+
+        .info--slide__title {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 75px;
+            margin-top: 60px;
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        .info--slide__title--2 {
+            text-align: center;
+            width: 100%;
+            margin-top: 100px;
+            margin-bottom: 144px;
+            color: #fff;
+            font-size: 60px;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .info--slide-2__box {
+            display: flex;
+            justify-content: center;
+            align-items: top;
+            gap: 105px;
+        }
+
+        .info span {
+            font-size: 40px;
+            color: #00CCCB;
+            margin-left: 100px;
+        }
+
+        .slide-2__italic {
+            font-weight: 700;
+            margin-left: 0 !important;
+            font-size: 30px !important;
+            color: #000 !important;
+        }
+
+        .info a {
+            display: inline-block;
+            float: right;
+            text-decoration: none;
+            color: #000;
+            background: #fff;
+            font-size: 1.5rem;
+            font-weight: 900;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            word-spacing: 5px;
+            letter-spacing: 2px;
+            -webkit-transition: box-shadow .3s, opacity .6s 1s, -webkit-transform .6s 1s;
+            -moz-transition: box-shadow .3s, opacity .6s 1s, -moz-transform .6s 1s;
+            -o-transition: box-shadow .3s, opacity .6s 1s, -o-transform .6s 1s;
+            transition: box-shadow .3s, opacity .6s 1s, transform .6s 1s;
+        }
+
+        .info a:hover {
+            box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, .1);
+        }
+
+        .img--eclipses {
+            position: absolute;
+            bottom: 73%;
+            left: 41%;
+            width: 342px;
+            height: 214px;
+        }
+
+        .img--eclipses__2 {
+            position: absolute;
+            bottom: -30%;
+            left: 32%;
+            z-index: 5;
+        }
+
+        .img--eclipses__3 {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin-top: 83px;
+        }
+
+        .img--meetup {
+            position: absolute;
+            top: 121%;
+
+        }
+
+        .img--logo {
+            position: absolute;
+            left: 53%;
+            bottom: 38%;
+            width: 293px;
+            height: 293px;
+            z-index: 5;
+        }
+
+        .img--notebook {
+            position: absolute;
+            width: 1443px;
+            height: 991px;
+            left: 53%;
+            bottom: 0%;
+        }
+
+        .info--slide-2__text {
+            font-size: 30px;
+            width: 576px;
+        }
+
+        .info--slide__tech-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .info--slide__techs {
+            display: flex;
+            align-items: center;
+
+            gap: 50px;
+            margin-bottom: 120px;
+            width: 500px;
+        }
+
+        .info--slide__techs-text {
+            color: #fff;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+        }
+
+        .next {
+            right: 5%;
+            left: auto;
+        }
+
+        .hide-nav {
+            visibility: hidden;
+        }
+
+        /* Transitions 
+----------------------------------*/
+        .card img,
+        .card .img,
+        .info>* {
+            opacity: 0;
+            -webkit-transform: translateY(20%);
+            -moz-transform: translateY(20%);
+            -ms-transform: translateY(20%);
+            -o-transform: translateY(20%);
+            transform: translateY(20%);
+            -webkit-transition: -webkit-transform .6s 1s, opacity .6s 1s;
+            -moz-transition: -moz-transform .6s 1s, opacity .6s 1s;
+            -o-transition: -o-transform .6s 1s, opacity .6s 1s;
+            transition: transform .6s 1s, opacity .6s 1s;
+        }
+
+        .prev_slide {
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -o-transform: translateX(-100%);
+            transform: translateX(-100%);
+        }
+
+        .current {
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        .current .card img,
+        .current .card .img,
+        .current .info>* {
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        @media screen and (max-width: 1067px) {
+            .info--main-title {
+                width: 400px;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .card {
+                /*max-width: 70%;*/
+            }
+
+        }
+
+        @media screen and (max-width: 800px) {
+            .card {
+                /*text-align: center;*/
+            }
+
+            .info {
+                /*padding-left: 0;*/
+            }
+
+            .info p {
+                /*display: none;*/
+            }
+
+            .info a {
+                /*float: none;*/
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            /* .card {
+                padding: 4%;
+            }
+
+            .card img,
+            .card .img {
+                width: 60%;
+                margin-bottom: 5%;
+            }
+
+            .info {
+                width: 100%;
+            }
+
+            .prev {
+                left: 3%;
+            }
+
+            .next {
+                right: 3%;
+            }*/
+        }
+
+        @media screen and (max-height: 450px) and (orientation: landscape) {
+
+            .card img,
+            .card .img {
+                /*width: 40%;
+                margin-bottom: 0;*/
+            }
+
+            .info {
+                /*width: 59%;
+                padding-left: 5%;*/
+            }
+        }
+    </style>
+    <div class="cd-slider">
+        <ul>
+            <li class="item current">
+                <div class="card">
+                    <!-- <img src="url"> -->
+                    <div class="info info--slide__1">
+                        <span>meet.</span>
+                        <svg class="info--main-title" xmlns="http://www.w3.org/2000/svg" width="721" height="86"
+                            viewBox="0 0 721 86" fill="none">
+                            <path
+                                d="M0 42.403C0 54.6721 4.65817 65.5797 12.3214 73.4136C19.9737 81.2364 30.6267 86 42.6344 86C54.6514 86 65.3402 81.2296 73.023 73.3974C80.7067 65.5635 85.3887 54.6628 85.3887 42.403C85.3887 30.4544 80.7161 19.8598 73.046 12.2522C65.3615 4.63008 54.6633 0 42.6344 0C30.614 0 19.9516 4.62414 12.2993 12.236C4.64966 19.8454 0 30.4459 0 42.403ZM11.2772 42.403C11.2772 33.2848 14.7347 25.2137 20.3487 19.404C26.0238 13.5296 33.9006 9.96608 42.6344 9.96608C51.3759 9.96608 59.2883 13.5356 64.9941 19.4176C70.6285 25.2281 74.1098 33.2933 74.1098 42.403C74.1098 51.8077 70.6302 60.1391 64.9984 66.1419C59.2926 72.2237 51.3785 75.9149 42.6344 75.9149C33.898 75.9149 26.0196 72.2297 20.3436 66.1563C14.7339 60.1536 11.2772 51.8162 11.2772 42.403ZM105.873 84.5678H117.359C119.888 84.5678 121.668 84.0524 122.792 82.9297C123.915 81.8045 124.43 80.0244 124.43 77.4951V31.7803C124.43 27.1358 123.721 20.3948 123.72 20.3761L123.658 19.7535H124.855L125.016 20.0478C125.026 20.0674 128.82 26.9444 131.905 31.4546L169.327 84.5678H179.208V13.7559C179.208 12.7174 179.496 11.9349 180.037 11.3932C180.599 10.8344 181.398 10.5631 182.4 10.5631H186.965V1.43225H175.598C173.007 1.43225 171.196 1.94764 170.056 3.07369C168.921 4.19549 168.408 5.97472 168.408 8.50409V54.2197C168.408 58.8464 169.237 65.595 169.238 65.6146L169.311 66.2456H168.109L167.945 65.9556C167.934 65.9361 164.032 59.076 160.934 54.5455L123.63 1.43225H113.629V72.2433C113.629 73.235 113.333 74.0285 112.777 74.5839C112.22 75.1392 111.427 75.4361 110.437 75.4361H105.873V84.5678ZM215.087 77.4951C215.087 80.0219 215.629 81.8003 216.779 82.9238C217.933 84.0507 219.744 84.5678 222.277 84.5678H259.631C262.159 84.5678 263.939 84.0524 265.062 82.9289C266.187 81.8037 266.702 80.0244 266.702 77.4951V67.4389H256.975V72.2433C256.975 73.235 256.678 74.0285 256.123 74.5839C255.565 75.1392 254.772 75.4361 253.783 75.4361H229.079C228.09 75.4361 227.299 75.1392 226.742 74.5839C226.184 74.0242 225.887 73.2324 225.887 72.2433V47.2074H255.483V38.0765H225.887V10.5631H250.441C251.444 10.5631 252.244 10.8344 252.804 11.3932C253.346 11.9349 253.634 12.7174 253.634 13.7559V18.5603H263.479V8.50409C263.479 5.97472 262.964 4.19461 261.841 3.07026C260.716 1.94676 258.937 1.43225 256.408 1.43225H207.329V10.5631H215.087V77.4951ZM293.63 55.6519C293.63 64.7037 296.803 72.3062 302.355 77.632C307.886 82.9391 315.791 86 325.285 86C334.671 86 342.525 82.9314 348.028 77.6116C353.537 72.2875 356.702 64.6935 356.702 55.6519V13.7559C356.702 12.7174 356.99 11.9349 357.532 11.3932C358.091 10.8344 358.892 10.5631 359.894 10.5631H364.459V1.43225H352.972C350.443 1.43225 348.664 1.94676 347.54 3.07026C346.416 4.19461 345.902 5.97472 345.902 8.50409V55.0557C345.902 61.5297 343.884 66.6998 340.326 70.2796C336.693 73.9358 331.47 75.9149 325.165 75.9149C318.82 75.9149 313.612 73.9486 309.996 70.3314C306.431 66.7662 304.431 61.613 304.431 55.1739V8.50409C304.431 5.97728 303.888 4.19975 302.738 3.0754C301.584 1.9485 299.773 1.43225 297.241 1.43225H285.874V10.5631H290.437C291.441 10.5631 292.241 10.8344 292.801 11.3932C293.341 11.9349 293.63 12.7174 293.63 13.7559V55.6519ZM383.989 84.5678H395.475C398.004 84.5678 399.783 84.0524 400.907 82.9289C402.031 81.8037 402.546 80.0244 402.546 77.4951V31.7803C402.546 27.1358 401.836 20.3948 401.835 20.3761L401.773 19.7535H402.971L403.132 20.0478C403.142 20.0674 406.935 26.9444 410.02 31.4546L447.443 84.5678H457.324V13.7559C457.324 12.7174 457.612 11.9349 458.153 11.3932C458.712 10.8344 459.512 10.5631 460.516 10.5631H465.081V1.43225H453.714C451.123 1.43225 449.312 1.94764 448.172 3.07369C447.037 4.19549 446.523 5.97472 446.523 8.50409V54.2197C446.523 58.8464 447.353 65.595 447.354 65.6146L447.427 66.2456H446.225L446.061 65.9556C446.05 65.9361 442.148 59.076 439.05 54.5455L401.746 1.43225H391.745V72.2433C391.745 73.2324 391.449 74.0243 390.893 74.5813C390.334 75.1393 389.543 75.4361 388.553 75.4361H383.989V84.5678ZM486.52 84.5678H513.192V75.4361H505.076V10.5631H513.192V1.43225H486.52V10.5631H494.754V75.4361H486.52V84.5678ZM534.036 42.403C534.036 54.6721 538.693 65.5797 546.357 73.4136C554.008 81.2364 564.662 86 576.669 86C588.686 86 599.376 81.2296 607.059 73.3974C614.742 65.5635 619.423 54.6628 619.423 42.403C619.423 30.4544 614.752 19.8598 607.081 12.2522C599.397 4.63008 588.699 0 576.669 0C564.649 0 553.987 4.62414 546.334 12.236C538.684 19.8454 534.036 30.4459 534.036 42.403ZM545.313 42.403C545.313 33.2848 548.77 25.2137 554.383 19.404C560.058 13.5296 567.935 9.96608 576.669 9.96608C585.411 9.96608 593.324 13.5356 599.03 19.4176C604.664 25.2281 608.145 33.2933 608.145 42.403C608.145 51.8077 604.666 60.1391 599.034 66.1419C593.327 72.2237 585.414 75.9149 576.669 75.9149C567.933 75.9149 560.055 72.2297 554.379 66.1563C548.768 60.1536 545.313 51.8162 545.313 42.403ZM639.908 84.5678H651.394C653.923 84.5678 655.702 84.0524 656.826 82.9289C657.951 81.8037 658.465 80.0244 658.465 77.4951V31.7803C658.465 27.1358 657.756 20.3948 657.754 20.3761L657.693 19.7535H658.889L659.051 20.0478C659.062 20.0674 662.854 26.9444 665.94 31.4546L703.362 84.5678H713.242V13.7559C713.242 12.7174 713.531 11.9349 714.072 11.3932C714.631 10.8344 715.432 10.5631 716.435 10.5631H721V1.43225H709.633C707.042 1.43225 705.23 1.94764 704.092 3.07369C702.957 4.19549 702.443 5.97472 702.443 8.50409V54.2197C702.443 58.8464 703.271 65.595 703.274 65.6146L703.346 66.2456H702.144L701.98 65.9556C701.969 65.9361 698.066 59.076 694.969 54.5455L657.666 1.43225H647.665V72.2433C647.665 73.2324 647.368 74.0243 646.813 74.5813C646.253 75.1393 645.462 75.4361 644.473 75.4361H639.908V84.5678Z"
+                                fill="#191919" />
+                        </svg>
+                        <p class="info--slide-1__text">сервис для организации видеоконференций</p>
+                        <img class="img--eclipses" src="images/eclipses.svg" alt="">
+                        <img class="img--logo" src="images/logo.svg" alt="">
+                        <img class="img--notebook" src="images/notebook-1.png" alt="">
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="card">
+                    <!-- <img src="url"> -->
+
+                    <div class="info info--slide__2">
+                        <h1 class="info--slide__title">О meet.Oneunion</h1>
+                        <div class="info--slide-2__box">
+                            <p class="info--slide-2__text"><span class="slide-2__italic">Meet.oneunion</span> предлагает
+                                простой и удобный способ проведения
+                                онлайн-встреч без регистрации. Вы можете общаться с коллегами, клиентами или друзьями
+                                через
+                                видео и аудио связь.</p>
+                            <p class="info--slide-2__text" style="width: 358px;">Альтернатива Zoom: <span
+                                    class="slide-2__italic">meet.oneunion</span>. Он зашифрован и вам не
+                                нужна учетная запись.</p>
+                            <p class="info--slide-2__text">Предоставляем возможность подключения через веб-камеры и
+                                микрофоны, чтобы вы могли видеть и слышать других участников в режиме реального времени.
+                            </p>
+                            <img class="img--eclipses__2" src="images/eclipses-2.svg" alt="">
+                            <img class="img--meetup" src="images/meetUp.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item" style="background: #191919">
+                <div class="card">
+                    <!-- <img src="url"> -->
+                    <div class="info info--slide__2">
+                        <img class="img--eclipses__3" src="images/eclipses-3.svg" alt="">
+                        <h2 class="info--slide__title--2">Возможности</h2>
+                        <div class="info--slide__tech-box">
+                                <div class="info--slide__techs">
+                                    <img class="img--slide__techs-pictures" src="images/display.svg" alt="">
+                                    <p class="info--slide__techs-text">Трансляция экрана</p>
+                                </div> 
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/chat.svg" alt="">
+                                <p class="info--slide__techs-text">Чат</p>
+                            </div>
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/rooms.svg" alt="">
+                                <p class="info--slide__techs-text">Комнаты</p>
+                            </div>
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/screen-recording.svg" alt="">
+                                <p class="info--slide__techs-text">Запись экрана</p>
+                            </div>
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/inter-board.svg" alt="">
+                                <p class="info--slide__techs-text">Интерактивная доска</p>
+                            </div>
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/video-youtube.svg" alt="">
+                                <p class="info--slide__techs-text">Видео</p>
+                            </div>
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/noize.svg" alt="">
+                                <p class="info--slide__techs-text">Функция шумоподавления</p>
+                            </div>
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/efficiency.svg" alt="">
+                                <p class="info--slide__techs-text">Производительность</p>
+                            </div>
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/security.svg" alt="">
+                                <p class="info--slide__techs-text">Настройки безопасности</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item" style="background: #565656">
+                <div class="card" style="background: #454545">
+                    <!-- <img src="url"> -->
+                    <div class="img">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path fill="#FFFFFF"
+                                d="M5.177,17.658c0,0,3.445,1.987,4.823,1.987c2.067,0,4.823-1.987,4.823-1.987c0.024-0.025,0.044-0.054,0.068-0.08H5.109C5.133,17.604,5.153,17.633,5.177,17.658z M8.622,1.583V0.531C6.496,0.973,2.539,2.521,1.376,7.933H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378C0.354,9.845,0.509,10,0.699,10h0.392c-0.016,0.224-0.026,0.454-0.033,0.689H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378c0,0.189,0.155,0.344,0.344,0.344h0.439c0.089,0.79,0.262,1.804,0.594,2.849v2.663H4.34c-2.233-2.449-2.264-6.822-2.264-7.01C2.077,4.052,6.353,2.108,8.622,1.583zM10.689,0.354H9.311v2.059h1.378V0.354z M11.378,2.63v0.472H8.622V2.63C6.612,3.147,3.11,4.951,3.11,11.258c0,0,0.004,3.373,1.47,5.632h4.042v-0.689h2.756v0.689h4.042c1.466-2.259,1.47-5.632,1.47-5.632C16.89,4.951,13.388,3.147,11.378,2.63z M5.005,12.035c-0.318-0.364-0.517-0.833-0.517-1.354S4.687,9.69,5.005,9.327V12.035zM6.383,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M7.761,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395C7.022,11.257,7.244,11,7.244,10.681c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM8.105,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S8.423,11.671,8.105,12.035z M10,13.445l-1.378,0.689L10,12.756l1.378,1.378L10,13.445z M11.895,12.035c-0.318-0.364-0.517-0.833-0.517-1.354s0.199-0.991,0.517-1.354V12.035z M13.273,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M14.651,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395c0.295-0.078,0.517-0.335,0.517-0.654c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM14.995,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S15.313,11.671,14.995,12.035z M19.646,9.656V8.278c0-0.189-0.155-0.344-0.344-0.344h-0.678c-1.163-5.413-5.12-6.96-7.246-7.402v1.052c2.269,0.525,6.545,2.469,6.545,9.675c0,0.188-0.031,4.561-2.264,7.01h2.608v-2.663c0.333-1.044,0.505-2.058,0.594-2.849h0.439c0.189,0,0.344-0.155,0.344-0.344v-1.378c0-0.189-0.155-0.344-0.344-0.344h-0.359c-0.007-0.235-0.017-0.465-0.033-0.689h0.392C19.491,10,19.646,9.845,19.646,9.656z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="info">
+                        <h1>Title Card #3</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum harum enim cumque, dolore
+                            repellat quidem, qui eligendi ipsa mollitia, laborum quo animi eaque eius rem odit, quas
+                            eum. Praesentium, perferendis.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item" style="background: #565656">
+                <div class="card" style="background: #454545">
+                    <!-- <img src="url"> -->
+                    <div class="img">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path fill="#FFFFFF"
+                                d="M5.177,17.658c0,0,3.445,1.987,4.823,1.987c2.067,0,4.823-1.987,4.823-1.987c0.024-0.025,0.044-0.054,0.068-0.08H5.109C5.133,17.604,5.153,17.633,5.177,17.658z M8.622,1.583V0.531C6.496,0.973,2.539,2.521,1.376,7.933H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378C0.354,9.845,0.509,10,0.699,10h0.392c-0.016,0.224-0.026,0.454-0.033,0.689H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378c0,0.189,0.155,0.344,0.344,0.344h0.439c0.089,0.79,0.262,1.804,0.594,2.849v2.663H4.34c-2.233-2.449-2.264-6.822-2.264-7.01C2.077,4.052,6.353,2.108,8.622,1.583zM10.689,0.354H9.311v2.059h1.378V0.354z M11.378,2.63v0.472H8.622V2.63C6.612,3.147,3.11,4.951,3.11,11.258c0,0,0.004,3.373,1.47,5.632h4.042v-0.689h2.756v0.689h4.042c1.466-2.259,1.47-5.632,1.47-5.632C16.89,4.951,13.388,3.147,11.378,2.63z M5.005,12.035c-0.318-0.364-0.517-0.833-0.517-1.354S4.687,9.69,5.005,9.327V12.035zM6.383,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M7.761,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395C7.022,11.257,7.244,11,7.244,10.681c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM8.105,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S8.423,11.671,8.105,12.035z M10,13.445l-1.378,0.689L10,12.756l1.378,1.378L10,13.445z M11.895,12.035c-0.318-0.364-0.517-0.833-0.517-1.354s0.199-0.991,0.517-1.354V12.035z M13.273,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M14.651,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395c0.295-0.078,0.517-0.335,0.517-0.654c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM14.995,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S15.313,11.671,14.995,12.035z M19.646,9.656V8.278c0-0.189-0.155-0.344-0.344-0.344h-0.678c-1.163-5.413-5.12-6.96-7.246-7.402v1.052c2.269,0.525,6.545,2.469,6.545,9.675c0,0.188-0.031,4.561-2.264,7.01h2.608v-2.663c0.333-1.044,0.505-2.058,0.594-2.849h0.439c0.189,0,0.344-0.155,0.344-0.344v-1.378c0-0.189-0.155-0.344-0.344-0.344h-0.359c-0.007-0.235-0.017-0.465-0.033-0.689h0.392C19.491,10,19.646,9.845,19.646,9.656z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="info">
+                        <h1>Title Card #3</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum harum enim cumque, dolore
+                            repellat quidem, qui eligendi ipsa mollitia, laborum quo animi eaque eius rem odit, quas
+                            eum. Praesentium, perferendis.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item" style="background: #565656">
+                <div class="card" style="background: #454545">
+                    <!-- <img src="url"> -->
+                    <div class="img">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path fill="#FFFFFF"
+                                d="M5.177,17.658c0,0,3.445,1.987,4.823,1.987c2.067,0,4.823-1.987,4.823-1.987c0.024-0.025,0.044-0.054,0.068-0.08H5.109C5.133,17.604,5.153,17.633,5.177,17.658z M8.622,1.583V0.531C6.496,0.973,2.539,2.521,1.376,7.933H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378C0.354,9.845,0.509,10,0.699,10h0.392c-0.016,0.224-0.026,0.454-0.033,0.689H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378c0,0.189,0.155,0.344,0.344,0.344h0.439c0.089,0.79,0.262,1.804,0.594,2.849v2.663H4.34c-2.233-2.449-2.264-6.822-2.264-7.01C2.077,4.052,6.353,2.108,8.622,1.583zM10.689,0.354H9.311v2.059h1.378V0.354z M11.378,2.63v0.472H8.622V2.63C6.612,3.147,3.11,4.951,3.11,11.258c0,0,0.004,3.373,1.47,5.632h4.042v-0.689h2.756v0.689h4.042c1.466-2.259,1.47-5.632,1.47-5.632C16.89,4.951,13.388,3.147,11.378,2.63z M5.005,12.035c-0.318-0.364-0.517-0.833-0.517-1.354S4.687,9.69,5.005,9.327V12.035zM6.383,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M7.761,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395C7.022,11.257,7.244,11,7.244,10.681c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM8.105,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S8.423,11.671,8.105,12.035z M10,13.445l-1.378,0.689L10,12.756l1.378,1.378L10,13.445z M11.895,12.035c-0.318-0.364-0.517-0.833-0.517-1.354s0.199-0.991,0.517-1.354V12.035z M13.273,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M14.651,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395c0.295-0.078,0.517-0.335,0.517-0.654c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM14.995,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S15.313,11.671,14.995,12.035z M19.646,9.656V8.278c0-0.189-0.155-0.344-0.344-0.344h-0.678c-1.163-5.413-5.12-6.96-7.246-7.402v1.052c2.269,0.525,6.545,2.469,6.545,9.675c0,0.188-0.031,4.561-2.264,7.01h2.608v-2.663c0.333-1.044,0.505-2.058,0.594-2.849h0.439c0.189,0,0.344-0.155,0.344-0.344v-1.378c0-0.189-0.155-0.344-0.344-0.344h-0.359c-0.007-0.235-0.017-0.465-0.033-0.689h0.392C19.491,10,19.646,9.845,19.646,9.656z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="info">
+                        <h1>Title Card #3</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum harum enim cumque, dolore
+                            repellat quidem, qui eligendi ipsa mollitia, laborum quo animi eaque eius rem odit, quas
+                            eum. Praesentium, perferendis.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <nav>
+            <a href="#" class="prev">
+                <svg viewBox="0 0 20 20">
+                    <path fill="#FFFFFF" stroke-width="0"
+                        d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z">
+                    </path>
+                </svg>
+            </a>
+            <a href="#" class="next">
+                <svg viewBox="0 0 20 20">
+                    <path fill="#FFFFFF" stroke-width="0"
+                        d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z">
+                    </path>
+                </svg>
+            </a>
+        </nav>
+
+    </div>
+
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</body>
+
+</html>

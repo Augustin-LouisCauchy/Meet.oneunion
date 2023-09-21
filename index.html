@@ -22,6 +22,10 @@
             border: 0;
         }
 
+        input {
+            display: block;
+        }
+
         html {
             font-size: 10px;
         }
@@ -234,9 +238,25 @@
             bottom: 0%;
         }
 
+        .img--phone {
+            position: absolute;
+            top: 3%;
+        }
+
         .info--slide-2__text {
             font-size: 30px;
             width: 576px;
+        }
+
+        .info--slide__subtitle {
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
         }
 
         .info--slide__tech-box {
@@ -261,6 +281,169 @@
             font-style: normal;
             font-weight: 500;
             line-height: normal;
+        }
+
+        .info--advantages__box {
+            margin-left: 550px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 95px;
+        }
+
+        .info--advantages {
+            margin-top: 92px;
+            margin-bottom: 100px;
+            text-align: center;
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .info--advantages__main-title {
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 600;
+            color: #000;
+            width: 620px;
+        }
+
+        .info--advantages__texts {
+            width: 622px;
+        }
+
+        .info--advantages__text {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            color: #000;
+            width: 518px;
+        }
+
+        .info--method {
+            text-align: center;
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 600;
+            color: #000;
+            margin-top: 90px;
+            margin-bottom: 9px;
+        }
+
+        .info--grid__container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-left: 10%;
+        }
+
+        .info--grid__box {
+            width: 245px;
+            margin-top: 65px;
+        }
+
+        .img--meth--app {
+            position: absolute;
+            left: 74%;
+            top: 4%;
+        }
+
+        .info--img__box {
+            position: relative;
+            width: 120px;
+        }
+
+        .img--variant {
+            position: absolute;
+            left: 11px;
+            top: 20%;
+        }
+
+        .img--variant__2 {
+            position: absolute;
+            left: 30px;
+            top: 24%;
+        }
+
+        .info--method__text {
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            color: #000;
+            width: 243px;
+            margin-top: 30px;
+        }
+
+        .info--method__subtext {
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            text-align: center;
+            color: #000;
+            margin-top: 117px;
+        }
+
+        .info--form__wrapper {
+            display: flex;
+            justify-content: space-between;
+            background-color: #191919;
+        }
+
+        .img--contact-eclipse {
+            position: absolute;
+            left: 26%;
+            top: 50%;
+        }
+
+        .img--contact-logo {
+            position: absolute;
+            left: 48%;
+            top: 53%;
+            z-index: 5;
+        }
+
+        .info--form__title {
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 600;
+            color: #fff;
+            padding-top: 100px;
+            padding-left: 100px;
+        }
+
+        .info--form__input {
+            background-color: transparent;
+            padding: 28px 40px;
+            width: 869px;
+            border: 2px solid #fff;
+            border-radius: 100px;
+            margin-left: 10%;
+            margin-bottom: 30px;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .info--form__input:focus {
+            outline: none;
+        }
+
+        .info--form__input::placeholder {
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .info--form__btn {
+            margin-left: 10%;
+            padding: 30px 40px;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            border-radius: 100px;
+            background-color: #00CCCB;
+            color: #fff;
         }
 
         .prev,
@@ -446,10 +629,10 @@
                         <img class="img--eclipses__3" src="images/eclipses-3.svg" alt="">
                         <h2 class="info--slide__title--2">Возможности</h2>
                         <div class="info--slide__tech-box">
-                                <div class="info--slide__techs">
-                                    <img class="img--slide__techs-pictures" src="images/display.svg" alt="">
-                                    <p class="info--slide__techs-text">Трансляция экрана</p>
-                                </div> 
+                            <div class="info--slide__techs">
+                                <img class="img--slide__techs-pictures" src="images/display.svg" alt="">
+                                <p class="info--slide__techs-text">Трансляция экрана</p>
+                            </div>
                             <div class="info--slide__techs">
                                 <img class="img--slide__techs-pictures" src="images/chat.svg" alt="">
                                 <p class="info--slide__techs-text">Чат</p>
@@ -483,60 +666,141 @@
                                 <p class="info--slide__techs-text">Настройки безопасности</p>
                             </div>
                         </div>
+                        <h4 class="info--slide__subtitle">и другие возможности/функции</h4>
                     </div>
                 </div>
             </li>
-            <li class="item" style="background: #565656">
-                <div class="card" style="background: #454545">
+            <li class="item">
+                <div class="card">
                     <!-- <img src="url"> -->
-                    <div class="img">
-                        <svg class="svg-icon" viewBox="0 0 20 20">
-                            <path fill="#FFFFFF"
-                                d="M5.177,17.658c0,0,3.445,1.987,4.823,1.987c2.067,0,4.823-1.987,4.823-1.987c0.024-0.025,0.044-0.054,0.068-0.08H5.109C5.133,17.604,5.153,17.633,5.177,17.658z M8.622,1.583V0.531C6.496,0.973,2.539,2.521,1.376,7.933H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378C0.354,9.845,0.509,10,0.699,10h0.392c-0.016,0.224-0.026,0.454-0.033,0.689H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378c0,0.189,0.155,0.344,0.344,0.344h0.439c0.089,0.79,0.262,1.804,0.594,2.849v2.663H4.34c-2.233-2.449-2.264-6.822-2.264-7.01C2.077,4.052,6.353,2.108,8.622,1.583zM10.689,0.354H9.311v2.059h1.378V0.354z M11.378,2.63v0.472H8.622V2.63C6.612,3.147,3.11,4.951,3.11,11.258c0,0,0.004,3.373,1.47,5.632h4.042v-0.689h2.756v0.689h4.042c1.466-2.259,1.47-5.632,1.47-5.632C16.89,4.951,13.388,3.147,11.378,2.63z M5.005,12.035c-0.318-0.364-0.517-0.833-0.517-1.354S4.687,9.69,5.005,9.327V12.035zM6.383,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M7.761,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395C7.022,11.257,7.244,11,7.244,10.681c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM8.105,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S8.423,11.671,8.105,12.035z M10,13.445l-1.378,0.689L10,12.756l1.378,1.378L10,13.445z M11.895,12.035c-0.318-0.364-0.517-0.833-0.517-1.354s0.199-0.991,0.517-1.354V12.035z M13.273,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M14.651,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395c0.295-0.078,0.517-0.335,0.517-0.654c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM14.995,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S15.313,11.671,14.995,12.035z M19.646,9.656V8.278c0-0.189-0.155-0.344-0.344-0.344h-0.678c-1.163-5.413-5.12-6.96-7.246-7.402v1.052c2.269,0.525,6.545,2.469,6.545,9.675c0,0.188-0.031,4.561-2.264,7.01h2.608v-2.663c0.333-1.044,0.505-2.058,0.594-2.849h0.439c0.189,0,0.344-0.155,0.344-0.344v-1.378c0-0.189-0.155-0.344-0.344-0.344h-0.359c-0.007-0.235-0.017-0.465-0.033-0.689h0.392C19.491,10,19.646,9.845,19.646,9.656z">
-                            </path>
-                        </svg>
-                    </div>
-                    <div class="info">
-                        <h1>Title Card #3</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum harum enim cumque, dolore
-                            repellat quidem, qui eligendi ipsa mollitia, laborum quo animi eaque eius rem odit, quas
-                            eum. Praesentium, perferendis.</p>
+                    <img class="img--phone" src="images/phone.png" alt="">
+                    <div class="info info--slide__2">
+                        <h2 class="info--advantages">Преимущества</h2>
+                        <div class="info--advantages__box">
+                            <div class="info--advantages__texts">
+                                <h3 class="info--advantages__main-title">Простота использования:</h3>
+                                <p class="info--advantages__text">Приложение имеет интуитивно понятный интерфейс,
+                                    который позволяет легко настраивать и управлять видеоконференциями.</p>
+                            </div>
+                            <div class="info--advantages__texts">
+                                <h3 class="info--advantages__main-title">Высокое качество видео и аудио:</h3>
+                                <p class="info--advantages__text">Мы предлагаем стабильное и высококачественное видео и
+                                    аудио соединение.</p>
+                            </div>
+                            <div class="info--advantages__texts">
+                                <h3 class="info--advantages__main-title">Гибкость и масштабируемость:</h3>
+                                <p class="info--advantages__text">Наше приложение поддерживает как небольшие групповые
+                                    видеоконференции, так и масштабные встречи с большим количеством участников.</p>
+                            </div>
+                            <div class="info--advantages__texts">
+                                <h3 class="info--advantages__main-title">Расширенные функции:</h3>
+                                <p class="info--advantages__text">Мы предоставляем дополнительные возможности, такие как
+                                    деление экрана, чат, обмен файлами и запись видеоконференций.</p>
+                            </div>
+                            <div class="info--advantages__texts">
+                                <h3 class="info--advantages__main-title">Безопасность и конфиденциальность:</h3>
+                                <p class="info--advantages__text">Предоставляем высокий уровень безопасности и
+                                    шифрования, чтобы обеспечить конфиденциальность всех ваших видеоконференций.</p>
+                            </div>
+                            <div class="info--advantages__texts">
+                                <h3 class="info--advantages__main-title">Поддержка и обновления:</h3>
+                                <p class="info--advantages__text">Наша команда предоставляет надежную поддержку для всех
+                                    наших клиентов.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>
-            <li class="item" style="background: #565656">
-                <div class="card" style="background: #454545">
+            <li class="item">
+                <div class="card">
                     <!-- <img src="url"> -->
-                    <div class="img">
-                        <svg class="svg-icon" viewBox="0 0 20 20">
-                            <path fill="#FFFFFF"
-                                d="M5.177,17.658c0,0,3.445,1.987,4.823,1.987c2.067,0,4.823-1.987,4.823-1.987c0.024-0.025,0.044-0.054,0.068-0.08H5.109C5.133,17.604,5.153,17.633,5.177,17.658z M8.622,1.583V0.531C6.496,0.973,2.539,2.521,1.376,7.933H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378C0.354,9.845,0.509,10,0.699,10h0.392c-0.016,0.224-0.026,0.454-0.033,0.689H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378c0,0.189,0.155,0.344,0.344,0.344h0.439c0.089,0.79,0.262,1.804,0.594,2.849v2.663H4.34c-2.233-2.449-2.264-6.822-2.264-7.01C2.077,4.052,6.353,2.108,8.622,1.583zM10.689,0.354H9.311v2.059h1.378V0.354z M11.378,2.63v0.472H8.622V2.63C6.612,3.147,3.11,4.951,3.11,11.258c0,0,0.004,3.373,1.47,5.632h4.042v-0.689h2.756v0.689h4.042c1.466-2.259,1.47-5.632,1.47-5.632C16.89,4.951,13.388,3.147,11.378,2.63z M5.005,12.035c-0.318-0.364-0.517-0.833-0.517-1.354S4.687,9.69,5.005,9.327V12.035zM6.383,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M7.761,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395C7.022,11.257,7.244,11,7.244,10.681c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM8.105,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S8.423,11.671,8.105,12.035z M10,13.445l-1.378,0.689L10,12.756l1.378,1.378L10,13.445z M11.895,12.035c-0.318-0.364-0.517-0.833-0.517-1.354s0.199-0.991,0.517-1.354V12.035z M13.273,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M14.651,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395c0.295-0.078,0.517-0.335,0.517-0.654c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM14.995,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S15.313,11.671,14.995,12.035z M19.646,9.656V8.278c0-0.189-0.155-0.344-0.344-0.344h-0.678c-1.163-5.413-5.12-6.96-7.246-7.402v1.052c2.269,0.525,6.545,2.469,6.545,9.675c0,0.188-0.031,4.561-2.264,7.01h2.608v-2.663c0.333-1.044,0.505-2.058,0.594-2.849h0.439c0.189,0,0.344-0.155,0.344-0.344v-1.378c0-0.189-0.155-0.344-0.344-0.344h-0.359c-0.007-0.235-0.017-0.465-0.033-0.689h0.392C19.491,10,19.646,9.845,19.646,9.656z">
-                            </path>
-                        </svg>
-                    </div>
-                    <div class="info">
-                        <h1>Title Card #3</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum harum enim cumque, dolore
-                            repellat quidem, qui eligendi ipsa mollitia, laborum quo animi eaque eius rem odit, quas
-                            eum. Praesentium, perferendis.</p>
+                    <div class="info info--slide__2">
+                        <h2 class="info--method">Способы применения</h2>
+                        <img class="img--meth--app" src="images/meth-app.svg" alt="">
+                        <div class="info--grid__container">
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant " src="images/variant-1.svg" alt="">
+                                </div>
+                                <p class="info--method__text">Консалтинг</p>
+                            </div>
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant img--variant__2" src="images/marketing.svg" alt="">
+                                </div>
+                                <p class="info--method__text">Маркетинг</p>
+                            </div>
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant img--variant__2" src="images/education.svg" alt="">
+                                </div>
+                                <p class="info--method__text">Образование</p>
+                            </div>
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant img--variant__2" src="images/bU.svg" alt="">
+                                </div>
+                                <p class="info--method__text">Бухгалтерия</p>
+                            </div>
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant img--variant__2" src="images/monitor.svg" alt="">
+                                </div>
+                                <p class="info--method__text" style="width: 243px;">Разработка программного обеспечения
+                                </p>
+                            </div>
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant img--variant__2" src="images/law.svg" alt="">
+                                </div>
+                                <p class="info--method__text ">Закон / юридический</p>
+                            </div>
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant img--variant__2" src="images/finance-2.svg" alt="">
+                                </div>
+                                <p class="info--method__text">Финансы</p>
+                            </div>
+                            <div class="info--grid__box">
+                                <div class="info--img__box">
+                                    <img class="img--circle" src="images/circle.svg" alt="">
+                                    <img class="img--variant img--variant__2" src="images/drugs.svg" alt="">
+                                </div>
+                                <p class="info--method__text">Лекарство</p>
+                            </div>
+                        </div>
+                        <p class="info--method__subtext">Что угодно, если вы хотите сотрудничать внутри своей компании
+                            или связываться со своими клиентами и сохранять конфиденциальность</p>
                     </div>
                 </div>
             </li>
-            <li class="item" style="background: #565656">
-                <div class="card" style="background: #454545">
+            <li class="item">
+                <div class="card">
                     <!-- <img src="url"> -->
-                    <div class="img">
-                        <svg class="svg-icon" viewBox="0 0 20 20">
-                            <path fill="#FFFFFF"
-                                d="M5.177,17.658c0,0,3.445,1.987,4.823,1.987c2.067,0,4.823-1.987,4.823-1.987c0.024-0.025,0.044-0.054,0.068-0.08H5.109C5.133,17.604,5.153,17.633,5.177,17.658z M8.622,1.583V0.531C6.496,0.973,2.539,2.521,1.376,7.933H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378C0.354,9.845,0.509,10,0.699,10h0.392c-0.016,0.224-0.026,0.454-0.033,0.689H0.699c-0.189,0-0.344,0.155-0.344,0.344v1.378c0,0.189,0.155,0.344,0.344,0.344h0.439c0.089,0.79,0.262,1.804,0.594,2.849v2.663H4.34c-2.233-2.449-2.264-6.822-2.264-7.01C2.077,4.052,6.353,2.108,8.622,1.583zM10.689,0.354H9.311v2.059h1.378V0.354z M11.378,2.63v0.472H8.622V2.63C6.612,3.147,3.11,4.951,3.11,11.258c0,0,0.004,3.373,1.47,5.632h4.042v-0.689h2.756v0.689h4.042c1.466-2.259,1.47-5.632,1.47-5.632C16.89,4.951,13.388,3.147,11.378,2.63z M5.005,12.035c-0.318-0.364-0.517-0.833-0.517-1.354S4.687,9.69,5.005,9.327V12.035zM6.383,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M7.761,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395C7.022,11.257,7.244,11,7.244,10.681c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM8.105,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S8.423,11.671,8.105,12.035z M10,13.445l-1.378,0.689L10,12.756l1.378,1.378L10,13.445z M11.895,12.035c-0.318-0.364-0.517-0.833-0.517-1.354s0.199-0.991,0.517-1.354V12.035z M13.273,10.026c-0.295,0.078-0.517,0.335-0.517,0.654c0,0.319,0.222,0.576,0.517,0.654v1.395c-0.384-0.032-0.738-0.163-1.033-0.377V9.008c0.296-0.214,0.649-0.345,1.033-0.377V10.026z M14.651,12.353c-0.296,0.214-0.649,0.345-1.033,0.377v-1.395c0.295-0.078,0.517-0.335,0.517-0.654c0-0.319-0.222-0.576-0.517-0.654V8.631c0.384,0.032,0.738,0.163,1.033,0.377V12.353zM14.995,12.035V9.327c0.318,0.363,0.517,0.833,0.517,1.354S15.313,11.671,14.995,12.035z M19.646,9.656V8.278c0-0.189-0.155-0.344-0.344-0.344h-0.678c-1.163-5.413-5.12-6.96-7.246-7.402v1.052c2.269,0.525,6.545,2.469,6.545,9.675c0,0.188-0.031,4.561-2.264,7.01h2.608v-2.663c0.333-1.044,0.505-2.058,0.594-2.849h0.439c0.189,0,0.344-0.155,0.344-0.344v-1.378c0-0.189-0.155-0.344-0.344-0.344h-0.359c-0.007-0.235-0.017-0.465-0.033-0.689h0.392C19.491,10,19.646,9.845,19.646,9.656z">
-                            </path>
-                        </svg>
-                    </div>
-                    <div class="info">
-                        <h1>Title Card #3</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum harum enim cumque, dolore
-                            repellat quidem, qui eligendi ipsa mollitia, laborum quo animi eaque eius rem odit, quas
-                            eum. Praesentium, perferendis.</p>
+                    <div class="info info--slide__2">
+                        <div class="info--form__wrapper">
+                            <div class="info--flex">
+                                <h3 class="info--form__title">Свяжитесь с нами</h3>
+                                <form action="">
+                                    <input class="info--form__input" style="margin-top: 75px;" type="email"
+                                        placeholder="Email">
+                                    <input class="info--form__input" type="text" placeholder="Сообщение">
+                                    <button class="info--form__btn">Отправить</button>
+                                </form>
+                                <img class="img--contact-eclipse" src="images/cont-eclipses.svg" alt="">
+                                <img class="img--contact-logo" src="images/cont-logo.svg" alt="">
+                            </div>
+                            <div class="img--block__contact">
+                                <img class="info--guys" src="images/guys.png" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -545,14 +809,14 @@
         <nav>
             <a href="#" class="prev">
                 <svg viewBox="0 0 20 20">
-                    <path fill="#FFFFFF" stroke-width="0"
+                    <path fill="#00CCCB" stroke-width="0"
                         d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z">
                     </path>
                 </svg>
             </a>
             <a href="#" class="next">
                 <svg viewBox="0 0 20 20">
-                    <path fill="#FFFFFF" stroke-width="0"
+                    <path fill="#00CCCB" stroke-width="0"
                         d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z">
                     </path>
                 </svg>
